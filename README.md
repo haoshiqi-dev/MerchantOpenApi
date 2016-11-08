@@ -1,11 +1,12 @@
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+好食期商户开放接口
+=============
 
+这是好食期商户开放接口的开发文档，提供了授权给商户的开放接口的使用方法和说明。
+
+###推送物流信息(支持批量)
 **接口地址 : /merchantapi/pushdeliverymsg**
 
-**请求方法 :POST**
+**请求方法 :`POST`**
 
 **请求参数**
 
