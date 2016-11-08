@@ -1,0 +1,42 @@
+# Cache and logs
+logs/*
+log/*
+conf/*
+cert/*
+deploy/*
+vendor/*
+
+# Composer PHAR
+/composer.phar
+/composer.lock
+
+.DS_Store
+/.idea
+
+# tags Files
+/.tags
+/.tags*
+/.tags_sorted_by_file
+/resetData.sh
+
+*.php~
+*.swap
+*.swp
+*.swo
+*.bak
+*.ini
+*.log
+
+Gemfile.lock
+
+# Ctags Phpcomplete Files
+/tags
+/.phpcomplete_extended/
+
+# ignore doctrine cli-config.php file
+/cli-config.php
+
+# Kdevelop IDE
+.kdev4
+*.kdev4
+
