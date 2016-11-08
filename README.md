@@ -2,13 +2,10 @@
 ===========================
 这是好食期商户开放接口的开发文档，提供了授权给商户的开放接口的使用方法和说明。
 
--------------------
-
 ##目录
 * [签名方式](#签名方式)
-* [推送物流信息(支持批量)](#推送物流信息支持批量)
-* [获取商户未发货订单(支持批量)](#获取商户未发货订单)
-* [横线](#横线)
+* [推送物流信息](#推送物流信息)
+* [获取商户未发货订单列表](#获取商户未发货订单列表)
 
 
 ###签名方式
@@ -21,29 +18,29 @@ privateKey | 必填 | text | 私钥 | test
 appId和privateKey是统一下发的，并且唯一。
 
 1、
-签名算法
-签名生成的通用步骤如下：
-第一步，设发送的参数为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串stringA。
-特别注意以下重要规则：
-◆ 参数名ASCII码从小到大排序（字典序）；
-◆ 参数名区分大小写；
-◆ 验证调用签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。
-第二步，在stringA最后拼接上privateKey得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue。
+签名算法 
+签名生成的通用步骤如下： 
+第一步，设发送的参数为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串stringA。 
+特别注意以下重要规则： 
+◆ 参数名ASCII码从小到大排序（字典序）； 
+◆ 参数名区分大小写； 
+◆ 验证调用签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。 
+第二步，在stringA最后拼接上privateKey得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue。 
 
-举例：
-假设传送的参数如下：
+举例： 
+假设传送的参数如下： 
 
-appid：M_101
-timeStamp : 1570825151
-第一步：对参数按照key=value的格式，并按照参数名ASCII字典序排序如下：
-stringA="appid=M_101&timeStamp=1570825151";
-第二步：拼接API密钥：
+appid：M_101 
+timeStamp : 1570825151 
+第一步：对参数按照key=value的格式，并按照参数名ASCII字典序排序如下： 
+stringA="appid=M_101&timeStamp=1570825151"; 
+第二步：拼接API密钥： 
 
-stringSignTemp="stringA&privateKey=test"
-sign=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7"
-最终得到签名
+stringSignTemp="stringA&privateKey=test" 
+sign=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7" 
+最终得到签名 
 
-###推送物流信息(支持批量)
+###推送物流信息
 **接口地址 : /merchantapi/pushdeliverymsg**
 
 **请求方法 :`POST`**
@@ -68,6 +65,7 @@ type | 选填 | int | 推送类型 0(默认):添加物流单号 1:重置物流�
 
 **param字段值sample**
 
+`*单次推送最多支持20条物流信息`
 <pre>
 [{"orderId":"2147483649","deliveryComCode":"yuantong","deliveryNo":"710291798405","type":0},{"orderId":"2147483659","deliveryComCode":"huitongkuaidi","deliveryNo":"211033681228","type":1}]
 </pre>
@@ -79,7 +77,7 @@ type | 选填 | int | 推送类型 0(默认):添加物流单号 1:重置物流�
 success | 必填 | int | 推送成功的数量 |  |
 failed | 必填 | int | 推送失败的数量 |  |
 
-###获取商户未发货订单
+###获取商户未发货订单列表
 **接口地址 : merchantapi/waitdeliveryorderlist**
 
 **请求方法 :`GET`**
