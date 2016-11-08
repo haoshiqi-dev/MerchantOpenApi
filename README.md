@@ -38,7 +38,7 @@ stringA="appid=M_101&timeStamp=1570825151";
 
 stringSignTemp="stringA&privateKey=test"  
 `sign`=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7"  
-最终得到签名  
+最终得到签名  `(/src/index.php有PHP版本的签名算法)`
 
 ***
 

@@ -5,7 +5,7 @@
  * Date: 16-11-7
  * Time: 上午11:35
  */
-abstract class DWDData_Sign{
+class DWDData_Sign{
 
     protected $values = array();
 
