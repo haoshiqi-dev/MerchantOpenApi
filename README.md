@@ -4,9 +4,10 @@
 
 ##目录
 * [签名方式](#签名方式)
-* [推送物流信息](#推送物流信息)
 * [获取商户未发货订单列表](#获取商户未发货订单列表)
+* [推送物流信息](#推送物流信息)
 
+***
 
 ###签名方式
 参数名 | 必填 | 类型 | 描述 | 样例
@@ -39,42 +40,7 @@ stringSignTemp="stringA&privateKey=test"
 `sign`=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7"  
 最终得到签名  
 
-###推送物流信息
-**接口地址 : /merchantapi/pushdeliverymsg**
-
-**请求方法 :`POST`**
-
-**请求参数**
-
-参数名 | 必填 | 类型 | 描述 | 样例
------------- | ------------ | ------------ | ------------ | ------------
-timeStamp | 必填 | int | 时间戳 | 1478589796
-appId | 必填 | text | APP ID | test
-sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
-param | 必填 | json | 物流信息列表 | 支持多个，详细请看"param字段参数"
-
-**param字段参数**
-
-参数名 | 必填 | 类型 | 描述 | 样例
------------- | ------------ | ------------ | ------------ | ------------
-orderId | 必填 | int | 平台订单编号 | 2147483649
-deliveryComCode | 必填 | text | 物流公司编码 | huitongkuaidi
-deliveryNo | 必填 |text | 物流单号 | 2147483649214
-type | 选填 | int | 推送类型 0(默认):添加物流单号 1:重置物流单号 | 0
-
-**param字段值sample**
-
-`*单次推送最多支持20条物流信息`
-<pre>
-[{"orderId":"2147483649","deliveryComCode":"yuantong","deliveryNo":"710291798405","type":0},{"orderId":"2147483659","deliveryComCode":"huitongkuaidi","deliveryNo":"211033681228","type":1}]
-</pre>
-
-**返回数据**
-
-参数名 | 必填  | 类型 | 描述 | 样例
------------- | ------------ | ------------ | ------------ | ------------
-success | 必填 | int | 推送成功的数量 |  |
-failed | 必填 | int | 推送失败的数量 |  |
+***
 
 ###获取商户未发货订单列表
 **接口地址 : merchantapi/waitdeliveryorderlist**
@@ -145,4 +111,41 @@ created_at | 必填 | int | 下单时间 |  |
 merchant_discount | 必填 | int | 商家折扣 |   |
 platform_discount | 必填 | int | 平台折扣 |  |
 
+***
 
+###推送物流信息
+**接口地址 : /merchantapi/pushdeliverymsg**
+
+**请求方法 :`POST`**
+
+**请求参数**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+timeStamp | 必填 | int | 时间戳 | 1478589796
+appId | 必填 | text | APP ID | test
+sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
+param | 必填 | json | 物流信息列表 | 支持多个，详细请看"param字段参数"
+
+**param字段参数**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+orderId | 必填 | int | 平台订单编号 | 2147483649
+deliveryComCode | 必填 | text | 物流公司编码 | huitongkuaidi
+deliveryNo | 必填 |text | 物流单号 | 2147483649214
+type | 选填 | int | 推送类型 0(默认):添加物流单号 1:重置物流单号 | 0
+
+**param字段值sample**
+
+`*单次推送最多支持20条物流信息`
+<pre>
+[{"orderId":"2147483649","deliveryComCode":"yuantong","deliveryNo":"710291798405","type":0},{"orderId":"2147483659","deliveryComCode":"huitongkuaidi","deliveryNo":"211033681228","type":1}]
+</pre>
+
+**返回数据**
+
+参数名 | 必填  | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+success | 必填 | int | 推送成功的数量 |  |
+failed | 必填 | int | 推送失败的数量 |  |
