@@ -4,8 +4,8 @@
 
 -------------------
 
-- <a href="#推送物流信息支持批量">推送物流信息</a>
-- <a href="#推送物流信息支持批量">推送物流信息</a>
+- <a href="#推送物流信息支持批量">推送物流信息(支持批量)</a>
+- <a href="#推送物流信息支持批量">推送物流信息(支持批量)</a>
 
 ###推送物流信息(支持批量)
 **接口地址 : /merchantapi/pushdeliverymsg**
@@ -29,6 +29,12 @@ orderId | 必填 | int | 平台订单编号 | 2147483649
 deliveryComCode | 必填 | text | 物流公司编码 | huitongkuaidi
 deliveryNo | 必填 |text | 物流单号 | 2147483649214
 type | 选填 | int | 推送类型 0(默认):添加物流单号 1:重置物流单号 | 0
+
+**param字段值Sample**
+
+<pre>
+[{"orderId":"2147483649","deliveryComCode":"yuantong","deliveryNo":"710291798405","type":0},{"orderId":"2147483659","deliveryComCode":"huitongkuaidi","deliveryNo":"211033681228","type":1}]
+</pre>
 
 **返回数据**
 
