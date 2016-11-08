@@ -17,7 +17,7 @@ privateKey | 必填 | text | 私钥 | test
 
 appId和privateKey是统一下发的，并且唯一。
 
-**1、签名算法**
+**1、签名算法**  
 签名生成的通用步骤如下：   
 `第一步`，设发送的参数为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串stringA。  
 特别注意以下重要规则：  
@@ -26,7 +26,7 @@ appId和privateKey是统一下发的，并且唯一。
 ◆ 验证调用签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。   
 `第二步`，在stringA最后拼接上privateKey得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue。  
 
-**2、签名举例**
+**2、签名举例**  
 假设传送的参数如下：  
 
 appId：M_101  
