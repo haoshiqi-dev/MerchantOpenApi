@@ -18,27 +18,27 @@ privateKey | 必填 | text | 私钥 | test
 appId和privateKey是统一下发的，并且唯一。
 
 1、
-签名算法 
-签名生成的通用步骤如下： 
-第一步，设发送的参数为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串stringA。 
-特别注意以下重要规则： 
-◆ 参数名ASCII码从小到大排序（字典序）； 
-◆ 参数名区分大小写； 
-◆ 验证调用签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。 
-第二步，在stringA最后拼接上privateKey得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue。 
+签名算法   
+签名生成的通用步骤如下：   
+第一步，设发送的参数为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串stringA。  
+特别注意以下重要规则：  
+◆ 参数名ASCII码从小到大排序（字典序）；  
+◆ 参数名区分大小写；  
+◆ 验证调用签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。   
+第二步，在stringA最后拼接上privateKey得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue。  
 
-举例： 
-假设传送的参数如下： 
+举例：  
+假设传送的参数如下：  
 
-appid：M_101 
-timeStamp : 1570825151 
-第一步：对参数按照key=value的格式，并按照参数名ASCII字典序排序如下： 
-stringA="appid=M_101&timeStamp=1570825151"; 
-第二步：拼接API密钥： 
+appid：M_101  
+timeStamp : 1570825151  
+第一步：对参数按照key=value的格式，并按照参数名ASCII字典序排序如下：  
+stringA="appid=M_101&timeStamp=1570825151";  
+第二步：拼接API密钥：  
 
-stringSignTemp="stringA&privateKey=test" 
-sign=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7" 
-最终得到签名 
+stringSignTemp="stringA&privateKey=test"  
+sign=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7"  
+最终得到签名  
 
 ###推送物流信息
 **接口地址 : /merchantapi/pushdeliverymsg**
