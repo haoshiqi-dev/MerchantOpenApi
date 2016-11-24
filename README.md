@@ -43,7 +43,7 @@ stringSignTemp="stringA&privateKey=test"
 ***
 
 ###获取商户未发货订单列表
-**接口地址 : merchantapi/waitdeliveryorderlist**
+**接口地址 : /merchantapi/waitdeliveryorderlist**
 
 **请求方法 :`GET`**
 
