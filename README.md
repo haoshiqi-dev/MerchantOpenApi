@@ -149,3 +149,30 @@ type | 选填 | int | 推送类型 0(默认):添加物流单号 1:重置物流�
 ------------ | ------------ | ------------ | ------------ | ------------
 success | 必填 | int | 推送成功的数量 |  |
 failed | 必填 | int | 推送失败的数量 |  |
+
+*物流公司标准名称*
+
+物流公司编码 | 物流单号
+------------ | ------------
+huitongkuaidi | 百世汇通	
+yuantong | 圆通速递	
+shentong | 申通快递	
+zhongtong | 中通快递	
+shunfeng | 顺丰速运	
+yunda | 韵达快递	
+tiantian | 天天快递	
+youzhengguonei | 中国邮政	
+quanfengkuaidi | 全峰快递	
+zhaijisong | 宅急送	
+ems | EMS	
+kuaijiesudi | 快捷速递	
+youshuwuliu | 优速物流	
+guotongkuaidi | 国通快递	
+zhaijibian | 宅急便	
+suer | 速尔快递	
+debangwuliu | 德邦物流	
+yuanchengwuliu | 远成物流	
+jd | 京东	
+annengwuliu | 安能物流	
+yxexpress | 亿翔	
+baishiwuliu | 百世物流
