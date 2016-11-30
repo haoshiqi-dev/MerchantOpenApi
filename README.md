@@ -57,8 +57,72 @@ sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
 pageLimit | 选填 | int | 分页显示数量 | 默认为10，最大20
 pageNum | 选填 | int | 分页页码 | 默认为0
 
+**返回数据**
 
+参数名 | 必填  | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+id | 必填 | int | 订单ID |  |
+user_id | 必填 | int | 用户ID |  |
+merchant_id | 必填 | int | 商户ID |  |
+market_price | 必填 | int | 订单市场价 |  |
+total_price | 必填 | int | 总价 |  |
+pay_price | 必填 | int | 支付金额 |  |
+delivery_price | 必填 | int | 运费 |  |
+status | 必填 | int | 订单状态 | 订单状态 1.未支付 2.已支付.3.已完成 4.已取消 5. 申请退款 6.退款中 7.  已退款  8.拒绝退款   |
+delivery_status | 必填 | int | 配送状态 | 配送状态：1.未发货 2.已发货  3.配送完成 |
+merchant_discount | 必填 | int | 商家折扣 |   |
+platform_discount | 必填 | int | 平台折扣 |  |
+discount_price | 必填 | int | 优惠金额 |  |
+total_amount | 必填 | int | 总数量 |  |
+delivery_type | 必填 | int | 配送类型 |  配送类型:1. 无时间限制 2.工作日配送 3.仅周末配送|
+note | 选填 | text | 备注 |  |
+delivery_province | 必填 | text | 配送省份 |  |
+invoice_type | 选填 | int | 发票类型 | 发票类型 1.不需要发票  2.个人发票 3.公司发票 |
+invoice_title | 选填 | int | 发票抬头 |  |
+delivery_city | 必填 | text | 配送城市 |  |
+delivery_district | 必填 | text | 配送区县 |  |
+delivery_detail_address | 必填 | text | 配送具体地址 |  |
+consignee | 必填 | text | 收货人 |  |
+consignee_phone | 必填 | text | 收货人电话 |  |
+created_at | 必填 | int | 下单时间 |  |
+skuList | 必填 | array | 子订单详情 |
 
+**skuList**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+id | 必填 | int | 子订单ID |  |
+product_id | 必填 | int | 商品id |  |
+sku_id | 必填 | int | 单品id |  |
+sku_name | 必填 | text | 单品名称 |  |
+sku_thumbnail | 必填 | text | 单品缩略图 |  |
+unit_price | 必填 | int | 单价 |  |
+market_price | 必填 | int | 市场价 |  |
+amount | 必填 | int | 数量 |   |
+total_price | 必填 | int | 总价 | |
+discount_price | 必填 | int | 商家折扣 |  优惠金额 |
+pay_price | 必填 | int | 平台折扣 | 支付金额 |
+status | 必填 | int | 单品订单状态 | 1.未支付 2.已支付.3.已完成 4.已取消 5. 申请退款 6.退款中 7.  已退款  8.拒绝退款
+is_free | 选填 | text | 是否是赠品 |  |
+created_at | 必填 | int | 下单时间 |  |
+merchant_discount | 必填 | int | 商家折扣 |   |
+platform_discount | 必填 | int | 平台折扣 |  |
+
+***
+
+###获取商户某个订单信息
+**接口地址 : /merchantapi/orderinfo**
+
+**请求方法 :`GET`**
+
+**请求参数**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+timeStamp | 必填 | int | 时间戳 | 1478589796
+appId | 必填 | text | APP ID | test
+sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
+orderId | 必填 | int | 订单ID | 2147565312
 
 **返回数据**
 
@@ -88,9 +152,9 @@ delivery_detail_address | 必填 | text | 配送具体地址 |  |
 consignee | 必填 | text | 收货人 |  |
 consignee_phone | 必填 | text | 收货人电话 |  |
 created_at | 必填 | int | 下单时间 |  |
-sku_list | 必填 | array | 子订单详情 |
+skuList | 必填 | array | 子订单详情 |
 
-**sku_list**
+**skuList**
 
 参数名 | 必填 | 类型 | 描述 | 样例
 ------------ | ------------ | ------------ | ------------ | ------------
@@ -110,8 +174,6 @@ is_free | 选填 | text | 是否是赠品 |  |
 created_at | 必填 | int | 下单时间 |  |
 merchant_discount | 必填 | int | 商家折扣 |   |
 platform_discount | 必填 | int | 平台折扣 |  |
-
-***
 
 ###推送物流信息
 **接口地址 : /merchantapi/pushdeliverymsg**
