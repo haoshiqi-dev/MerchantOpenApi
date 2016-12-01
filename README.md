@@ -86,9 +86,9 @@ delivery_detail_address | 必填 | text | 配送具体地址 |  |
 consignee | 必填 | text | 收货人 |  |
 consignee_phone | 必填 | text | 收货人电话 |  |
 created_at | 必填 | int | 下单时间 |  |
-skuList | 必填 | array | 子订单详情 |
+sku_list | 必填 | array | 子订单详情 |
 
-**skuList**
+**sku_list**
 
 参数名 | 必填 | 类型 | 描述 | 样例
 ------------ | ------------ | ------------ | ------------ | ------------
@@ -153,9 +153,9 @@ delivery_detail_address | 必填 | text | 配送具体地址 |  |
 consignee | 必填 | text | 收货人 |  |
 consignee_phone | 必填 | text | 收货人电话 |  |
 created_at | 必填 | int | 下单时间 |  |
-skuList | 必填 | array | 子订单详情 |
+sku_list | 必填 | array | 子订单详情 |
 
-**skuList**
+**sku_list**
 
 参数名 | 必填 | 类型 | 描述 | 样例
 ------------ | ------------ | ------------ | ------------ | ------------
