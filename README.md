@@ -65,6 +65,7 @@ pageNum | 选填 | int | 分页页码 | 默认为0
 ------------ | ------------ | ------------ | ------------ | ------------
 id | 必填 | int | 订单ID |  |
 user_id | 必填 | int | 用户ID |  |
+user_name | 必填 | text | 用户昵称 |   |
 merchant_id | 必填 | int | 商户ID |  |
 market_price | 必填 | int | 订单市场价 |  |
 total_price | 必填 | int | 总价 |  |
@@ -99,7 +100,7 @@ sku_id | 必填 | int | 单品id |  |
 sku_name | 必填 | text | 单品名称 |  |
 sku_thumbnail | 必填 | text | 单品缩略图 |  |
 unit_price | 必填 | int | 单价 |  |
-market_price | 必填 | int | 市场价 |  |
+market_price | 必填 | int | 市场价 |  | 
 amount | 必填 | int | 数量 |   |
 total_price | 必填 | int | 总价 | |
 discount_price | 必填 | int | 商家折扣 |  优惠金额 |
@@ -109,7 +110,7 @@ is_free | 选填 | text | 是否是赠品 |  |
 created_at | 必填 | int | 下单时间 |  |
 merchant_discount | 必填 | int | 商家折扣 |   |
 platform_discount | 必填 | int | 平台折扣 |  |
-
+merchant_item_code | 必填 | text | 商家编码 |   |
 ***
 
 ###获取商户某个订单信息
@@ -132,6 +133,7 @@ orderId | 必填 | int | 订单ID | 2147565312
 ------------ | ------------ | ------------ | ------------ | ------------
 id | 必填 | int | 订单ID |  |
 user_id | 必填 | int | 用户ID |  |
+user_name | 必填 | text | 用户昵称 |   |
 merchant_id | 必填 | int | 商户ID |  |
 market_price | 必填 | int | 订单市场价 |  |
 total_price | 必填 | int | 总价 |  |
@@ -176,6 +178,7 @@ is_free | 选填 | text | 是否是赠品 |  |
 created_at | 必填 | int | 下单时间 |  |
 merchant_discount | 必填 | int | 商家折扣 |   |
 platform_discount | 必填 | int | 平台折扣 |  |
+merchant_item_code | 必填 | text | 商家编码 |   |
 
 ###推送物流信息
 **接口地址 : /merchantapi/pushdeliverymsg**
