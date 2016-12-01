@@ -111,6 +111,7 @@ created_at | 必填 | int | 下单时间 |  |
 merchant_discount | 必填 | int | 商家折扣 |   |
 platform_discount | 必填 | int | 平台折扣 |  |
 merchant_item_code | 必填 | text | 商家编码 |   |
+
 ***
 
 ###获取商户某个订单信息
@@ -179,6 +180,8 @@ created_at | 必填 | int | 下单时间 |  |
 merchant_discount | 必填 | int | 商家折扣 |   |
 platform_discount | 必填 | int | 平台折扣 |  |
 merchant_item_code | 必填 | text | 商家编码 |   |
+
+***
 
 ###推送物流信息
 **接口地址 : /merchantapi/pushdeliverymsg**
