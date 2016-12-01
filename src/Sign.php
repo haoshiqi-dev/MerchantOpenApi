@@ -39,7 +39,7 @@ class DWDData_Sign{
      **/
     public function SetTimeStamp($value)
     {
-        $this->values['timesTamp'] = $value;
+        $this->values['timeStamp'] = $value;
     }
     /**
      * 获取调用Api时间戳的值
@@ -47,7 +47,7 @@ class DWDData_Sign{
      **/
     public function GetTimeStamp()
     {
-        return $this->values['timesTamp'];
+        return $this->values['timeStamp'];
     }
 
 
