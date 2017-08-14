@@ -57,7 +57,7 @@ timeStamp | 必填 | int | 时间戳 | 1478589796
 appId | 必填 | text | APP ID | test
 sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
 pageLimit | 选填 | int | 分页显示数量 | 默认为10，最大20
-pageNum | 选填 | int | 分页页码 | 默认为0
+pageNum | 选填 | int | 分页页码 | 默认为1
 
 **返回数据**
 
