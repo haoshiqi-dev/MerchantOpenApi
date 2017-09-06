@@ -56,8 +56,10 @@ stringSignTemp="stringA&privateKey=test"
 timeStamp | 必填 | int | 时间戳 | 1478589796
 appId | 必填 | text | APP ID | test
 sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
-pageLimit | 选填 | int | 分页显示数量 | 默认为10，最大20
+pageLimit | 选填 | int | 分页显示数量 | 默认为10，最大100
 pageNum | 选填 | int | 分页页码 | 默认为1
+paginationType | 选填 | int | 分页方式 | 不填默认为 1:顺序分页 2:nextId分页 
+nextId | 选填 | int | 获取的最近一个订单ID，不传默认为0 | 
 
 **返回数据**
 
