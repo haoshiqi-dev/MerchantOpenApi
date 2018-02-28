@@ -142,6 +142,7 @@ merchant_id | 必填 | int | 商户ID |  |
 market_price | 必填 | int | 订单市场价 |  |
 total_price | 必填 | int | 总价 |  |
 pay_price | 必填 | int | 支付金额 |  |
+pay_time | 必填 | int | 支付时间 | |
 delivery_price | 必填 | int | 运费 |  |
 status | 必填 | int | 订单状态 | 订单状态 1.未支付 2.已支付.3.已完成 4.已取消 5. 申请退款 6.退款中 7.  已退款  8.拒绝退款   |
 delivery_status | 必填 | int | 配送状态 | 配送状态：1.未发货 2.已发货  3.配送完成 |
