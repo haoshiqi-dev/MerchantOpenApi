@@ -8,6 +8,9 @@
 * [获取商户某个订单信息](#获取商户某个订单信息)
 * [推送物流信息](#推送物流信息)
 * [获取商户的所有订单](#获取商户的所有订单)
+* [获取商户的所有sku](#获取商户的所有sku)
+* [更新sku库存](#更新sku库存)
+* [sku单品详情](#sku单品详情)
 
 ***
 
@@ -42,6 +45,20 @@ stringA="appid=M_101&timeStamp=1570825151";
 stringSignTemp="stringA&privateKey=test"  
 `sign`=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7"  
 最终得到签名  `(/src/index.php有PHP版本的签名算法)`
+
+**3、返回格式**
+
+```
+{
+	"errno":0, // 非0为业务处理失败
+	"errmsg":"success", //当失败时候，这里是失败原因的简短描述
+	"data":{ //业务数据
+		"res":true
+	},
+	"timestamp":1539048644,
+	"serverlogid":"41858d7c78cb9a5f4e3a0a2efa9379e2"
+}
+```
 
 ***
 
@@ -274,3 +291,82 @@ paidTime | 选填 | string | 订单支付时间 | 开始时间,结束时间(1519
 **返回数据**
 
 同 `获取商户未发货订单列表` 接口
+
+***
+
+### 获取商户的所有sku
+**接口地址 : /merchantapi/merchantskulist**
+
+**请求方法 :`GET`**
+
+**请求参数**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+timeStamp | 必填 | int | 时间戳 | 1478589796
+appId | 必填 | text | APP ID | test
+sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
+pageLimit | 选填 | int | 分页显示数量 | 默认为10，最大100
+pageNum | 选填 | int | 分页页码 | 默认为1
+
+**返回数据**
+
+参数名 | 必填  | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+id | 必填 | int | 好食期平台的SKU ID |  |
+merchant_item_code | 必填 | string | 商家编码 |  |
+name | 必填 | string | Sku名称 |   |
+merchant_id | 必填 | int | 商家ID |   |
+product_id | 必填 | int | 产品ID |   |
+left_stock | 必填 | int | 剩余库存 |   |
+attrs | 必填 | array | 商品属性 |   |
+
+*attrs字段值*
+
+参数名 | 必填  | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+name | 必填 | string | 属性名称 | 规格
+value | 必填 | string | 属性值 | 125ml
+
+***
+
+### 更新sku库存
+**接口地址：/merchantapi/updateskustock**
+**请求方法 :`POST`**
+
+**请求参数**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+timeStamp | 必填 | int | 时间戳 | 1478589796
+appId | 必填 | text | APP ID | test
+sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
+merchantItemCode | 必填 | string | 商家编码 | xxxx
+type | 必填 | int | 增加或者减少库存 | 1: 增加，2：减少
+stockCnt | 必填 | int | 修改的库存的绝对值 | 10
+
+***
+### sku单品详情
+**接口地址：/merchantapi/merchantskuinfo**
+**请求方法 :`GET`**
+
+**请求参数**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+timeStamp | 必填 | int | 时间戳 | 1478589796
+appId | 必填 | text | APP ID | test
+sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
+merchantItemCode | 必填 | string | 商家编码 | xxxx
+
+**返回数据**
+
+参数名 | 必填 | 类型 | 描述 | 样例
+------------ | ------------ | ------------ | ------------ | ------------
+id | 必填 | int | 好事情sku id | 1478589796
+merchant_item_code | 必填 | string | 商家编码 | test
+name | 必填 | string | 商品名称 | HERSHEY'S好时巧克力原装整袋1.1kg牛奶巧克力口味婚庆喜糖
+merchant_id | 必填 | int | 商家ID | xxxx
+product_id | 必填 | int | 商品ID | 12121
+attrs | 必填 | array | 属性列表 | {"name":"批次","value":"20181025"}
+left_stock | 必填 | int | 剩余库存 | 121
