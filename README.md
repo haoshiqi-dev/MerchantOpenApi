@@ -332,6 +332,7 @@ value | 必填 | string | 属性值 | 125ml
 
 ### 更新sku库存
 **接口地址：/merchantapi/updateskustock**
+
 **请求方法 :`POST`**
 
 **请求参数**
