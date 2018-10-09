@@ -348,6 +348,7 @@ stockCnt | 必填 | int | 修改的库存的绝对值 | 10
 ***
 ### sku单品详情
 **接口地址：/merchantapi/merchantskuinfo**
+
 **请求方法 :`GET`**
 
 **请求参数**
