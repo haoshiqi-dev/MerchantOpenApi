@@ -320,6 +320,7 @@ merchant_id | 必填 | int | 商家ID |   |
 product_id | 必填 | int | 产品ID |   |
 left_stock | 必填 | int | 剩余库存 |   |
 attrs | 必填 | array | 商品属性 |   |
+enabled | 必填 | int | 商品上下架状态 | 1：已上架，0：未上架 |
 
 *attrs字段值*
 
@@ -371,4 +372,5 @@ name | 必填 | string | 商品名称 | HERSHEY'S好时巧克力原装整袋1.1k
 merchant_id | 必填 | int | 商家ID | xxxx
 product_id | 必填 | int | 商品ID | 12121
 attrs | 必填 | array | 属性列表 | {"name":"批次","value":"20181025"}
-left_stock | 必填 | int | 剩余库存 | 121
+left_stock | 必填 | int | 剩余库存 | 121 |
+enabled | 必填 | int | 商品上下架状态 | 1：已上架，0：未上架 |
