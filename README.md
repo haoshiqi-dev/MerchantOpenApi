@@ -124,7 +124,7 @@ market_price | 必填 | int | 市场价 |  |
 amount | 必填 | int | 数量 |   |
 total_price | 必填 | int | 总价 | |
 discount_price | 必填 | int | 优惠金额 |   |
-pay_price | 必填 | int | 平台折扣 | 支付金额 |
+pay_price | 必填 | int | 支付金额 |  |
 status | 必填 | int | 单品订单状态 | 1.未支付 2.已支付.3.已完成 4.已取消 5. 申请退款 6.退款中 7.  已退款  8.拒绝退款
 is_free | 选填 | text | 是否是赠品 |  |
 created_at | 必填 | int | 下单时间 |  |
