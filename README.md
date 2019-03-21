@@ -224,6 +224,8 @@ appId | 必填 | text | APP ID | test
 sign | 必填 | text | 签名 | E5F7D96195B17794857A88B6952F5169
 status | 选填 | int | 状态 | 默认全部  1: 待审核  2:审核通过 3: 审核拒绝
 orderId | 选填 | int | 订单ID | 2147565312
+startTime | 选填 | int | 申请时间范围-开始 | 1478589796
+endTime | 选填 | int | 申请时间范围-结束 | 1478589796
 pageLimit | 选填 | int | 分页显示数量 | 默认为10，最大100
 pageNum | 选填 | int | 分页页码 | 默认为1
 
