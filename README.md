@@ -177,7 +177,7 @@ delivery_type | 必填 | int | 配送类型 |  配送类型:1. 无时间限制 2
 note | 选填 | text | 备注 |  |
 delivery_province | 必填 | text | 配送省份 |  |
 invoice_type | 选填 | int | 发票类型 | 发票类型 1.不需要发票  2.个人发票 3.公司发票 |
-invoice_title | 选填 | int | 发票抬头 |  |
+invoice_title | 选填 | text | 发票抬头 |  |
 delivery_city | 必填 | text | 配送城市 |  |
 delivery_district | 必填 | text | 配送区县 |  |
 delivery_detail_address | 必填 | text | 配送具体地址 |  |
@@ -431,7 +431,7 @@ delivery_district       |      必填     |      text     |    配送区县    |
 delivery_detail_address |      必填     |      text     |    配送具体地址 |
 note                    |      选填     |      text     |    备注        |
 invoice_type            |      选填     |      int      |    发票类型     |发票类型 1.不需要发票 2.个人发票 3.公司发票
-invoice_title           |      选填     |      int      |    发票抬头     |
+invoice_title           |      选填     |      text      |    发票抬头     |
 consignee               |      必填     |      text     |    收货人       |
 consignee_phone         |      必填     |      text     |    收货人电话   |
 created_at              |      必填     |      int      |    下单时间     |
